@@ -5,40 +5,71 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 }
 
-<center><h4 class="mb-3"><i class="fa-regular fa-rectangle-list"></i> Historial de Motocicletas</h4></center>
-@foreach (var item in Model)
-{
-    <center>
-        <div class="card bg-light mb-3" style="max-width: 34rem;">
-            <div class="card-header">
-                <img src="@item.ImgMoto" class="rounded mx-auto d-block" width="50%">
-            </div>
-            <div class="card-body" style="text-align:left;">
-                <ul style="list-style: none;">
-                    <li><strong>Placa: </strong>@item.Placa</li>
-                    <li><strong>Marca: </strong>@item.Marca</li>
-                    <li><strong>N° Serie: </strong>@item.NumSerie</li>
-                    <li><strong>Cilindrada: </strong>@item.Cilindrada</li>
-                    <li><strong>Fecha: </strong>@item.Año</li>
-                    <li><strong>Estado: </strong>@item.EstadoMoto</li>
-                    <br>
-                    <li>
-                        <center>
-                            <form action="/mecanico/sendEmail?id=@item.Id&idcliente=@cliente.Id" method="post">
-                                <button class="btn btn-danger"><i class="fa-solid fa-envelope-circle-check"></i> Enviar Correo con Estado Moto</button>
-                            </form>
-                        </center>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-footer text-muted">
-                <a class="btn btn-success" href="/mecanico/editmoto?id=@item.Id&idcliente=@cliente.Id"><i class="fa-solid fa-pencil"></i> Editar Estado</a>
-                <a class="btn btn-success" href="/mecanico/reghistory?id=@item.Id&idcliente=@cliente.Id"><i class="fa-solid fa-calendar-plus"></i> Agregar Historia</a>
-                <a class="btn btn-success" href="/mecanico/verhistoria?id=@item.Id&idcliente=@item.IdCliente"><i class="fa-solid fa-list"></i> Mostrar Historia</a>
-            </div>
-        </div>
-    </center>
-}
+<center><h4 class="mb-3" style="margin-top:2%;"><i class="fa-regular fa-rectangle-list"></i> Historial de Motocicletas</h4></center>
+<div class="container overflow-hidden">
+    <div class="row justify-content-around">
+        @foreach (var item in Model)
+        {
+            <center>
+                <div class="card bg-light mb-3 " style="max-width: 34rem;">
+                    <div class="card-header">
+                        <img src="@item.ImgMoto" class="rounded mx-auto d-block" width="50%">
+                    </div>
+                    <div class="card-body" style="text-align:left;">
+                        <ul style="list-style: none;">
+                            <li><strong>Placa: </strong>@item.Placa</li>
+                            <li><strong>Marca: </strong>@item.Marca</li>
+                            <li><strong>N° Serie: </strong>@item.NumSerie</li>
+                            <li><strong>Cilindrada: </strong>@item.Cilindrada</li>
+                            <li><strong>Fecha: </strong>@item.Año</li>
+                            <li><strong>Estado: </strong>@item.EstadoMoto</li>
+                            <br>
+                            <li>
+                                <center>
+                                    <form action="/mecanico/sendEmail?id=@item.Id&idcliente=@cliente.Id" method="post">
+                                        <button class="btn btn-danger"><i class="fa-solid fa-envelope-circle-check"></i> Enviar Correo con Estado Moto</button>
+                                    </form>
+                                </center>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <a class="btn btn-success" href="/mecanico/editmoto?id=@item.Id&idcliente=@cliente.Id"><i class="fa-solid fa-pencil"></i> Editar Estado</a>
+                        <a class="btn btn-success" href="/mecanico/reghistory?id=@item.Id&idcliente=@cliente.Id"><i class="fa-solid fa-calendar-plus"></i> Agregar Historia</a>
+                        <a class="btn btn-success" href="/mecanico/verhistoria?id=@item.Id&idcliente=@item.IdCliente"><i class="fa-solid fa-list"></i> Mostrar Historia</a>
+                    </div>
+                </div>
+            </center>
+        }
+    </div>
+</div>
+<hr class="text-dark" size=4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

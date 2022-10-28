@@ -4,47 +4,49 @@
 @*<div class="nav-fantasma">
 
 </div>*@
+
 <center>
-    <div class="container">
+    <div class="container" style="margin-top:2%;">
         <div class="card" style="width:60%">
-                <h4 class="card-header"><strong><i class="fa-solid fa-id-card"></i> Registro de Mecánicos </strong></h4>  
-                <div class="card-body">
-                    <form action="/admin/registrar" method="post">
-                            <div class="mt-2 mb-2">
-                                <span class="text-danger">@Html.ValidationMessage("Nombre")</span>
-                                <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" placeholder="Ingrese Nombre" />
-                                <br>
+            <h4 class="card-header"><strong><i class="fa-solid fa-id-card"></i> Registro de Mecánicos </strong></h4>
+            <div class="card-body">
+                <form action="/admin/registrar" method="post">
+                    <div class="mt-2 mb-2">
+                        <span class="text-danger">@Html.ValidationMessage("Nombre")</span>
+                        <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" placeholder="Ingrese Nombre" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Apellidos")</span>
-                                <input class="form-control" type="text" name="Apellidos" value="@Model.Apellidos" placeholder="Ingrese Apellido" />
-                                <br>
+                        <span class="text-danger">@Html.ValidationMessage("Apellidos")</span>
+                        <input class="form-control" type="text" name="Apellidos" value="@Model.Apellidos" placeholder="Ingrese Apellido" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Dni")</span>
-                                <input class="form-control" type="text" name="Dni" value="" placeholder="Ingrese DNI" />
-                                <br>
+                        <span class="text-danger">@Html.ValidationMessage("Dni")</span>
+                        <input class="form-control" type="text" name="Dni" value="" placeholder="Ingrese DNI" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Correo")</span>
-                                <input class="form-control" type="text" name="Correo" value="@Model.Correo" placeholder="Ingrese Correo" />
-                                <br>
+                        <span class="text-danger">@Html.ValidationMessage("Correo")</span>
+                        <input class="form-control" type="text" name="Correo" value="@Model.Correo" placeholder="Ingrese Correo" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Telefono")</span>
-                                <input class="form-control" type="text" name="Telefono" value="" placeholder="Ingrese Teléfono" />
-                                <br>
+                        <span class="text-danger">@Html.ValidationMessage("Telefono")</span>
+                        <input class="form-control" type="text" name="Telefono" value="" placeholder="Ingrese Teléfono" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Username")</span>
-                                <input class="form-control" type="text" name="Username" value="@Model.Username" placeholder="Ingrese Usuario" />
-                                <br>
+                        <span class="text-danger">@Html.ValidationMessage("Username")</span>
+                        <input class="form-control" type="text" name="Username" value="@Model.Username" placeholder="Ingrese Usuario" />
+                        <br>
 
-                                <span class="text-danger">@Html.ValidationMessage("Password")</span>
-                                <input class="form-control" type="password" name="Password" value="" placeholder="Ingrese Contraseña" />
-                            </div>
-                        <hr class="text-dark" size=4>
-                        <button class="btn btn-info btn-lg"><i class="fa-solid fa-user-plus"></i> Realizar Registro </button>
-                    </form>
-                </div>
+                        <span class="text-danger">@Html.ValidationMessage("Password")</span>
+                        <input class="form-control" type="password" name="Password" value="" placeholder="Ingrese Contraseña" />
+                    </div>
+                    <hr class="text-dark" size=4>
+                    <button class="btn btn-info btn-lg"><i class="fa-solid fa-user-plus"></i> Realizar Registro </button>
+                </form>
+
+            </div>
         </div>
     </div>
-
+    <hr class="text-dark" size=4>
 </center>
 
 
