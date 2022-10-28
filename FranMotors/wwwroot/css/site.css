@@ -211,20 +211,22 @@ element.style {
     .container-estado p {
         text-align: center;
         font-size: 3rem;
-        color: WHITE;
+        color: white;
         position: absolute;
         top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-shadow: black 0.1em 0.1em 0.2em
     }
     .container-estado span {
-        text-align:center;
+        text-align: center;
         font-size: 3rem;
-        color: red;
+        color: white;
         position: absolute;
         top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-shadow: black 0.1em 0.1em 0.2em
     }
 
 
