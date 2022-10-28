@@ -59,7 +59,7 @@ namespace FranMotors.Repositories
                 Cilindrada = moto.Cilindrada.ToUpper(),
                 Año = moto.Año,
                 IdCliente = id,
-                EstadoMoto = moto.EstadoMoto,
+                EstadoMoto = moto.EstadoMoto.ToUpper(),
                 ImgMoto = SaveFile(imagesMoto[0]),
                 ImgTarjeta = SaveFile(imagesTarjeta[0])
             });
