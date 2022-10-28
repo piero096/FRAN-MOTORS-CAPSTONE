@@ -179,18 +179,6 @@ element.style {
 *, *::before, *::after {
     box-sizing: border-box;
 }
-.container-estado{
-    margin-top: 400px;
-    width: 100%;
-
-}
-.cont-ingreso .placain{
-    color: yellow;
-}
-
-.container-estado{
-
-}
 .footer-index {
     display: flex;
     flex-direction: row;
@@ -200,3 +188,44 @@ element.style {
     margin: 0;
     padding: 0;
 }
+
+
+.nav-cont{
+    width:100%;
+}
+/*INICIO PAG PLACA*/
+.container-estado {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 200px auto;
+    border-radius: 20px;
+    box-shadow: 5px 8px 12px black;
+}
+
+.container-estado img{
+    width:100%;
+    height:100%;
+}
+    .container-estado p {
+        text-align: center;
+        font-size: 3rem;
+        color: WHITE;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .container-estado span {
+        text-align:center;
+        font-size: 3rem;
+        color: red;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+
