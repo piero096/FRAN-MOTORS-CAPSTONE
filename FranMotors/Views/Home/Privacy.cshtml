@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@foreach (var item in Model)
+{
+
+    if (item.EstadoMoto == "En Ingreso")
+    {
+        <div class="container-estado cont-ingreso">
+            <p class="placain">@item.Placa</p>
+            <p>@item.EstadoMoto</p>
+        </div>
+    }
+    else if (item.EstadoMoto == "En Reparación")
+    {
+        <div class="container-estado cont-reparacion">
+            <p class="placare">@item.Placa</p>
+            <p>@item.EstadoMoto</p>
+        </div>
+    }
+    else if (item.EstadoMoto == "En Mantenimiento")
+    {
+        <div class="container-estado cont-mantenimiento">
+            <p class="placaman">@item.Placa</p>
+            <p>@item.EstadoMoto</p>
+        </div>
+    }
+    else if (item.EstadoMoto == "Para Entrega")
+    {
+        <div class="container-estado  cont-entrega">
+            <p class="placaen">@item.Placa</p>
+            <p>@item.EstadoMoto</p>
+        </div>
+    }
+
+
+
+}
+
+
+

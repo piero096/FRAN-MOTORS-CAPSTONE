@@ -1,0 +1,51 @@
+﻿@{
+    var moto = (Motocicleta)Model;
+}
+@section Logos{
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}
+
+@*<div class="nav-fantasma">
+
+</div>*@
+<center>
+    <div class="container">
+
+        <div class="card" style="width:60%">
+            <h4 class="card-header"><strong><i class="fa-solid fa-calendar-plus"></i> Registrar Historial de Motocicleta </strong></h4>
+            <div class="card-body">
+                <form id="crear" action="/mecanico/reghistory?id=@moto.Id&idcliente=@moto.IdCliente" method="post">
+                    <div class="mb-2">
+                        <select id="Tipo" class="form-control" name="Tipo">
+                            <option value="Mecanico">Mecánico</option>
+                            <option value="Cliente">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <input type="text" name="Detalle" class="form-control" placeholder="Escriba lo que se modificó" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                    </div>
+                    <div>
+                        <input id="precio" type="number" step="any" name="Precio" class="form-control" placeholder="Precio" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-info btnAgregar"><i class="fa-solid fa-plus"></i> Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+@section Scripts {
+    <script>
+        $(document).on('change', '#Tipo', function (event) {
+            var TipoCambio = $('#Tipo').val();
+            if (TipoCambio == "Cliente") {
+                $('#precio').attr('hidden', 'hidden');
+            } else {
+                $('#precio').removeAttr('hidden', 'hidden');
+            }
+        });
+    </script>
+}

@@ -1,0 +1,32 @@
+﻿@section Logos{ 
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}  
+<div class="container">
+    <div class="float-right">
+        <div class="input-group mb-3">
+            <form class="d-flex" action="/Mecanico/allclientes" method="get">
+                <input id="search" class="form-control me-2 mr-3" type="search" name="buscarClientes" placeholder="Buscar un Cliente..." aria-label="Search" />
+                <button class="btn btn-info btnBuscarCli"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>    
+    </div>
+
+    <div class="allcliente">
+
+    </div>
+</div>
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-user-pen"></i> Editar Cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="editClie">
+            </div>
+        </div>
+    </div>
+</div>
+

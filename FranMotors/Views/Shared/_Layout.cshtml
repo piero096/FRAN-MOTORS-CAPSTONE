@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FranMotors</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="shortcut icon" href="/FM.ico">
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/styleIndex.css" />
+    <link rel="stylesheet" href="~/css/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="~/css/styleConsultaPlaca.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="~/css/summernote.min.css" rel="stylesheet" />
+    @RenderSection("Logos", required: false)
+    @section Logos{
+        <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    }
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow">
+            <div class="container">
+
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="navbar-brand text-light ml-2" asp-area="" asp-controller="Home" asp-action="Index">FranMotors</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item ml-auto">
+                                <a style="color:white;" type="button" class="nav-link text-light" asp-area="" asp-controller="Auth" asp-action="Login">
+                                    <i class="fa-solid fa-user-tie"></i> Iniciar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+                else
+                {
+                    foreach (var item in ViewBag.account)
+                    {
+                        if (User.Claims.FirstOrDefault().Value == item.Username && item.Tipo == "Admin")
+                        {
+                            <a class="navbar-brand text-light ml-2" asp-area="" asp-controller="Home" asp-action="Index">FranMotors</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                <ul class="navbar-nav flex-grow-1">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" style="margin-right:5px"><i class="fa-solid fa-user-shield"></i> @item.Tipo</a>
+                                    </li>
+
+                                    <li class="nav-item ml-auto">
+                                        <div class="nav-link btn-group">
+                                            <a style="color: white; background: transparent;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-user-tie"></i> Bienvenido: @User.Claims.FirstOrDefault().Value <i class="fa-solid fa-angle-down"></i>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="/admin/registrar"><i class="fa-solid fa-id-card"></i> Registrar Mecánico</a>
+                                                <a class="dropdown-item" href="/admin/mecanico"><i class="fa-regular fa-rectangle-list"></i> Lista de Mecánicos</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="/auth/logout" style="color:#EE0A0A"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        }
+                        else if (User.Claims.FirstOrDefault().Value == item.Username && item.Tipo == "Mecanico")
+                        {
+
+                            <a class="navbar-brand text-light ml-2" asp-area="" asp-controller="Home" asp-action="Index">FranMotors</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                <ul class="navbar-nav flex-grow-1">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" style="margin-right:5px"><i class="fa-solid fa-user-gear"></i> @item.Tipo</a>
+                                    </li>
+                                    <li class="nav-item ml-auto">
+                                        <div class="nav-link btn-group">
+                                            <a style="color: white; background: transparent;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-user-tie"></i> Bienvenido: @User.Claims.FirstOrDefault().Value <i class="fa-solid fa-angle-down"></i>
+                                            </a>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="/mecanico/register"><i class="fa-solid fa-id-card"></i> Registrar Cliente</a>
+                                                <a class="dropdown-item" href="/mecanico/listcliente"><i class="fa-regular fa-rectangle-list"></i> Lista de Clientes</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="/auth/logout" style="color:#EE0A0A"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        }
+                    }
+                }
+
+            </div>
+        </nav>
+    </header>
+        
+    <main>
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="~/js/jquery.flexslider.js"></script>
+    <script src="~/js/summernote.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fbfbfb;
+}
+
+
+/*BUTTON BUSCAR PLACA*/
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+    button.learn-more {
+        width: 12rem;
+        height: auto;
+    }
+
+        button.learn-more .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #282936;
+            border-radius: 1.625rem;
+        }
+
+            button.learn-more .circle .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+            }
+
+                button.learn-more .circle .icon.arrow {
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+                }
+
+                    button.learn-more .circle .icon.arrow::before {
+                        position: absolute;
+                        content: "";
+                        top: -0.29rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+
+        button.learn-more .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 1.85rem;
+            color: #282936;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    button:hover .circle {
+        width: 100%;
+    }
+
+        button:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+        }
+
+    button:hover .button-text {
+        color: #fff;
+    }
+/*FIN BUTTON BUSCAR PLACA*/
+.section-index {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background: #2b3137;
+    -webkit-box-shadow: 12px 12px 24px #252a2f, -12px -12px 24px #31383f;
+    box-shadow: 12px 12px 24px #252a2f, -12px -12px 24px #31383f;
+}
+.cont-section {
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+
+
+.form-moto {
+    width: 100%;
+    height: 50%;
+    padding: 0px 0px 0px 0px;
+    background: #F2F3F4;
+}
+.form.form.contenedor{
+    padding-left:10%;
+
+}
+.contenedor{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3% 19%;
+}
+
+.form-moto h1 {
+    color: #212529;
+}
+
+.form-item {
+    padding: 10px;
+}
+
+.search{
+    width:248px;
+
+}
+
+
+.sale_pro {
+    background: #f25252 !important;
+}
+
+.margin_top_50 {
+    margin-top: 50px;
+}
+
+.margin_bottom_30_all {
+    margin-bottom: 30px;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.full.slider_cont_section {
+    padding-top: 120px;
+    padding-left: 340px;
+    right: 70px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+#sidebarCollapse {
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 55px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px 25px;
+    font-size: 1.3em;
+    display: block;
+    font-weight: 300;
+}
+
+    #sidebar ul li a:hover {
+        color: #7386D5;
+        background: #fff;
+    }
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #f36b2a;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+#content {
+    width: 100%;
+    min-height: auto;
+    transition: all 0.3s;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.main_heading._left_side {
+    font-size: 62px;
+    color: #010208;
+    font-weight: 700;
+}
+
+p.large {
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.text_align_right {
+    text-align: right;
+}
+
+.r-img img {
+    float: right;
+}
+
+.padding_top_0 {
+    padding-top: 0 !important;
+}
+
+.dark_bg_blue {
+    background: #343a40;
+}
+
+.dark_bg_orange {
+    background: #f36b2a;
+}
+
+
+.cross_layout_o {
+    min-height: 850px;
+    margin-top: 0;
+    position: relative;
+}
+
+.cross_layout::before {
+    content: "";
+    width: 100%;
+    height: 300px;
+    display: block;
+    position: absolute;
+    background: url('../images/cross_blue.png');
+    top: -300px;
+    z-index: 9;
+}
+
+.cross_layout_o {
+    min-height: 1000px;
+    margin-top: 300px;
+    position: relative;
+}
+
+    .cross_layout_o::before {
+        content: "";
+        width: 100%;
+        height: 300px;
+        display: block;
+        position: absolute;
+        background: url('../images/cross_orange.png');
+        top: -300px;
+        z-index: 9;
+    }
+
+h2.heading_main {
+    padding-left: 5px;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    min-height: 90px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    line-height: 90px;
+    min-width: 320px;
+    float: left;
+    background: #f36b2a;
+    margin-bottom: 75px;
+    border-radius: 20px;
+}
+
+.choose_blog h4 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.choose_blog p {
+    color: #fff;
+    padding: 0 20px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 200;
+    opacity: 0.7;
+}
+
+.container-fluid {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.row{
+    margin-top: 0px !important;
+}
+

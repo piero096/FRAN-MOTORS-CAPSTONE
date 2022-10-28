@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+@section Logos{ 
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}  
+
+<div class="container">
+    <form action="/admin/edit?id=@Model.Id" method="post">
+        <div class="mb-2">
+            <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" placeholder="Ingrese Nombre" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Nombre")</span>
+        <div class="mt-2 mb-2">
+            <input class="form-control" type="text" name="Apellidos" value="@Model.Apellidos" placeholder="Ingrese Apellido" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Apellidos")</span>
+        <div class="mt-2 mb-2">
+            <input class="form-control" type="text" name="Dni" value="@Model.Dni" placeholder="Ingrese DNI" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Dni")</span>
+        <div class="mt-2 mb-2">
+            <input class="form-control" type="text" name="Correo" value="@Model.Correo" placeholder="Ingrese Correo" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Correo")</span>
+        <div class="mt-2 mb-2">
+            <input class="form-control" type="text" name="Telefono" value="@Model.Telefono" placeholder="Ingrese Teléfono" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Telefono")</span>
+        <div class="mt-2 mb-2">
+            <input class="form-control" type="text" name="Username" value="@Model.Username" placeholder="Ingrese Teléfono" />
+        </div>
+        <span class="text-danger">@Html.ValidationMessage("Username")</span>
+        <div class="mt-2 mb-2">
+            <select class="form-control" name="estado">
+                <option value="">----Editar Estado ----</option>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+            </select>
+        </div>
+        <div class="mt-2 mb-2 modal-footer">
+            <button class="btn btn-success form-control"><i class="fa-solid fa-pencil"></i> Editar</button>
+        </div>
+    </form>
+</div>

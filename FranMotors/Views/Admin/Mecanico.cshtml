@@ -1,0 +1,32 @@
+﻿@section Logos{ 
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}  
+<div class="container">
+        <div class="float-right">
+            <div class="input-group mb-3 col">
+                <form class="d-flex" action="/admin/listmeca" method="get">
+                    <input id="search" class="form-control me-2 mr-3" type="search" name="buscarmeca" placeholder="Buscar un Mecánico..." aria-label="Search" />
+                    <button class="btn btn-info btnBuscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="listMeca">
+
+        </div>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa-solid fa-user-pen"></i> Editar Mécanico</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="modal-body" id="edit">
+                </div>
+            </div>
+        </div>
+    </div>
+

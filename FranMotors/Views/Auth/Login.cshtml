@@ -1,0 +1,29 @@
+﻿<link rel="stylesheet" href="~/css/login.css" />
+<div class="container">
+    <form action="/auth/login" class="formulario" method="post">
+        <h1 class="main-title">Iniciar Sesión</h1>
+        <div class="contenedor">
+            @*@if (TempData["AuthMessage"] != null)
+        {
+            <p class="text-danger">@TempData["AuthMessage"]</p>
+        }
+        @if (TempData["AuthMessageEstado"] != null)
+        {
+            <p class="text-danger">@TempData["AuthMessageEstado"]</p>
+        }*@
+            <p class="text-danger">@ViewBag.Error</p>
+            <p class="text-danger">@ViewBag.Estado</p>
+            <div class="input-contendor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" class="text-lowercase" name="username" placeholder="Usuario" />
+            </div>
+            <div class="input-contendor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" name="password" placeholder="Contraseña" />
+            </div>
+            <div>
+                <input type="submit" name="name" value="Iniciar Sesión" class="button" />
+            </div>
+        </div>
+    </form>
+</div>

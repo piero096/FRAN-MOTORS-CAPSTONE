@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="~/css/ampliarImg.css" />
+
+<div class="table-responsive-lg">
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>@*class="bg-dark text-light"*@
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Foto DNI</th>
+                <th scope="col"><i class="fa-solid fa-circle-info"></i> Información</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><a class="btn btn-dark" href="/mecanico/listmoto?id=@item.Id"><i class="fa-solid fa-folder-open"></i> @item.Nombre</a></td>
+                    <td>@item.Apellido</td>
+                    <td>@item.Dni</td>
+                    <td>@item.Correo</td>
+                    <td>@item.Telefono</td>
+                    <td style="cursor:pointer;">
+                        <img src="@item.ImageDni" id="@item.Id" alt="Snow" width="68" />
+                        <div id="myModal" class="modal ModeloCss">
+                            <span class="close2">&times;</span>
+                            <img class="modal-content contenedorXd" id="img01">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group align-self-start ">
+                            <a style="color:white;" onclick="clien(id = @item.Id)" data-toggle="modal" data-target="#exampleModal3" class="btn btn-success btn-sm">
+                                <i class="fa-solid fa-pencil" aria-hidden="true"></i>
+                            </a>
+                            <a href="/mecanico/delete?id=@item.Id" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                            </a>
+                            <a class="btn btn-info btn-sm" href="/mecanico/registermoto?id=@item.Id"><i class="fa-solid fa-motorcycle"></i> AGREGAR MOTO</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <script>
+                    var modal = document.getElementById("myModal");
+                    var img = document.getElementById("@item.Id");
+                    var modalImg = document.getElementById("img01");
+                    img.onclick = function () {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close2")[0];
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+                </script>
+            }
+        </tbody>
+    </table>
+</div>

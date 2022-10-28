@@ -1,0 +1,99 @@
+﻿@section Logos{ 
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}
+
+
+@*<div class="nav-fantasma">
+
+</div>*@
+<center>
+    <div class="container">
+        <div class="formmulario">
+            <div class="card" style="width:60%">
+                <h4 class="card-header"><strong><i class="fa-solid fa-pen-to-square"></i> Editar Estado de Motocicleta </strong></h4>
+                 <div class="card-body" style="text-align:left;">
+                    <form action="/mecanico/editmoto?id=@Model.Id&idcliente=@Model.IdCliente" method="post">
+                        <div class="mt-2 mb-2">
+                            <input class="form-control" type="text" name="Placa" value="@Model.Placa"/>
+                            <span class="text-danger">@Html.ValidationMessage("Placa")</span>
+                            <br>
+                            <input class="form-control" type="text" name="Marca" value="@Model.Marca"/>
+                            <span class="text-danger">@Html.ValidationMessage("Marca")</span>
+                            <br>
+                            <input class="form-control" type="text" name="NumSerie" value="@Model.NumSerie"/>
+                            <span class="text-danger">@Html.ValidationMessage("NumSerie")</span>
+                            <br>
+                            <input class="form-control" type="text" name="Cilindrada" value="@Model.Cilindrada"/>
+                            <span class="text-danger">@Html.ValidationMessage("Cilindrada")</span>
+                            <br>
+                            <input class="form-control" type="text" name="Año" value="@Model.Año"/>
+                            <span class="text-danger">@Html.ValidationMessage("Año")</span>
+                            <br>
+                            <span style="text-align:left;">ESTADO EN EL QUE SE ENCUENTRA LA MOTO: </span>
+                            <strong><span class="text-success text-uppercase">@Model.EstadoMoto</span></strong>
+                            <br>
+                            <select class="form-control" name="EstadoMoto">
+                                @*<option value="@Model.EstadoMoto">@Model.EstadoMoto</option>*@
+                                <option value="">--- SELECCIONE UNA OPCIÓN PARA CAMBIAR ESTADO DE LA MOTO---</option>
+                                <option value="En Ingreso">En Ingreso</option>
+                                <option value="En Reparación">En Reparación</option>
+                                <option value="En Mantenimiento">En Mantenimiento</option>
+                                <option value="Para Entrega">Para Entrega</option>
+                            </select>
+                        </div>
+                        <hr class="text-dark" size=4>
+                        <center><button class="btn btn-primary"><i class="fa-solid fa-pencil"></i> Editar Estado</button></center>
+                    </form>
+
+                 </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+
+@*<div class="container">
+    <div class="formmulario">
+        <h3>Registrar Motocileta</h3>
+        <form action="/mecanico/editmoto?id=@Model.Id&idcliente=@Model.IdCliente" method="post">
+            <div class="mt-2 mb-2">
+                <input class="form-control" type="text" name="Placa" value="@Model.Placa" disabled/>
+            </div>
+            <span class="text-danger">@Html.ValidationMessage("Placa")</span>
+            <div class="mt-2 mb-2">
+                <input class="form-control" type="text" name="Marca" value="@Model.Marca" disabled/>
+            </div>
+            <span class="text-danger">@Html.ValidationMessage("Marca")</span>
+            <div class="mt-2 mb-2">
+                <input class="form-control" type="text" name="NumSerie" value="@Model.NumSerie" disabled/>
+            </div>
+            <span class="text-danger">@Html.ValidationMessage("NumSerie")</span>
+            <div class="mt-2 mb-2">
+                <input class="form-control" type="text" name="Cilindrada" value="@Model.Cilindrada" disabled/>
+            </div>
+            <span class="text-danger">@Html.ValidationMessage("Cilindrada")</span>
+            <div class="mt-2 mb-2">
+                <input class="form-control" type="text" name="Año" value="@Model.Año" disabled/>
+            </div>
+            <span class="text-danger">@Html.ValidationMessage("Año")</span>
+            <div class="m-2">
+                <span>ESTADO EN EL QUE SE ENCUENTRA LA MOTO: </span>
+                <span class="text-success text-uppercase">@Model.EstadoMoto</span>
+            </div>
+            <div>*@
+@*                <select class="form-control" name="EstadoMoto">
+                    <option value="@Model.EstadoMoto">@Model.EstadoMoto</option>
+                    <option value="">--- SELECCIONE UNA OPCIÓN PARA CAMBIAR ESTADO DE LA MOTO---</option>
+                    <option value="En Ingreso">En Ingreso</option>
+                    <option value="En Reparación">En Reparación</option>
+                    <option value="En Mantenimiento">En Mantenimiento</option>
+                    <option value="Para Entrega">Para Entrega</option>
+                </select>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-primary">Editar</button>
+            </div>
+        </form>
+    </div>
+</div>*@

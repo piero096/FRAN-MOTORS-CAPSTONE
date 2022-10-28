@@ -1,0 +1,32 @@
+﻿@{
+    var moto = (Motocicleta)ViewBag.moto;
+}
+
+<center><h4 class="mb-3"><i class="fa-regular fa-rectangle-list"></i> Historia de Modificaciones</h4></center>
+<center><a class="btn btn-info" href="/mecanico/listmoto?id=@moto.IdCliente"><i class="fa-solid fa-arrow-right-from-bracket"></i> Regrese a su Historial de Motocicletas</a></center>
+<br>
+@foreach (var item in Model)
+{
+
+    <center>
+        <div class="card bg-light mb-3" style="max-width: 34rem;">
+            <div class="card-header" style="text-align:left;">
+                <ul style="list-style: none;">
+                    <li><strong>Historia realizada por:</strong> @item.Tipo</li>
+                    <li><strong>Fecha de Modificación: </strong>@item.Fecha</li>
+                    @if (item.Tipo == "Mecanico")
+                    {
+                        <li><strong>Precio:</strong> S/. @item.Precio</li>
+                    }
+                    <li>
+                        <u><strong>Detalles de la Modificación</strong></u>
+                        <br>
+                        @item.Detalle
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </center>
+
+}
+<center><a class="btn btn-info" href="/mecanico/listmoto?id=@moto.IdCliente"><i class="fa-solid fa-arrow-right-from-bracket"></i> Regrese a su Historial de Motocicletas</a></center>

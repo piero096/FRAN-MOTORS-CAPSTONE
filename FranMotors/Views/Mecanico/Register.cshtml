@@ -1,0 +1,62 @@
+﻿
+<link rel="stylesheet" href="~/css/RegisterCliente.css" />
+@section Logos{
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+}
+
+@*<div class="nav-fantasma">
+
+</div>*@
+<center>
+    <div class="container">
+        <div class="card" style="width:60%">
+            <h4 class="card-header"><strong><i class="fa-solid fa-id-card"></i> Registro de Clientes </strong></h4>
+            <div class="card-body">
+                <form action="/mecanico/register" method="post" enctype="multipart/form-data">
+                    <div class="mt-2 mb-2">
+                        <span class="text-danger">@Html.ValidationMessage("Nombre")</span>
+                        <input class="form-control" type="text" name="Nombre" placeholder="Ingrese Nombre" />
+                        <br>
+
+                        <span class="text-danger">@Html.ValidationMessage("Apellido")</span>
+                        <input class="form-control" type="text" name="Apellido" placeholder="Ingrese Apellido" />
+                        <br>
+
+                        <span class="text-danger">@Html.ValidationMessage("Dni")</span>
+                        <input class="form-control" type="text" name="Dni" placeholder="Ingrese DNI" />
+                        <br>
+                        <strong><span class="float-left">Adjuntar foto de DNI</span></strong>
+                        <br>
+                        <div class="mb-4">
+                            <div class="float-lg-right">
+                                <span class="text-danger">@Html.ValidationMessage("ImageDni")</span>
+                            </div>
+                            <input class="float-left" type="file" multiple id="add-new-photo" name="images">
+                        </div>
+                        <br>
+                        <div class="container">
+                            <section id="Images" class="images-cards">
+                                <div class="">
+                                    <div id="add-photo-container">
+                                        <div class="add-new-photo first" id="add-photo">
+                                            <span><i class="icon-camera"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <br>
+                        <span class="text-danger">@Html.ValidationMessage("Correo")</span>
+                        <input class="form-control" type="text" name="Correo" placeholder="Ingrese Correo" />
+                        <br>
+
+                        <span class="text-danger">@Html.ValidationMessage("Telefono")</span>
+                        <input class="form-control" type="text" name="Telefono" placeholder="Ingrese Teléfono" />
+                    </div>
+                    <hr class="text-dark" size=4>
+                    <button class="btn btn-info btn-lg" disabled="disabled"><i class="fa-solid fa-user-plus"></i> Realizar Registro </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</center>

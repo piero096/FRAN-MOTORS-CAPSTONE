@@ -1,0 +1,50 @@
+﻿@{ 
+    Layout = null;
+}
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Estado</th>
+            <th scope="col"><i class="fa-solid fa-circle-info"></i> Información</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Tipo == "Mecanico")
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Apellidos</td>
+                    <td>@item.Dni</td>
+                    <td>@item.Correo</td>
+                    <td>@item.Username</td>
+                    <td>@item.Telefono</td>
+                    @if (item.Estado == true)
+                    {
+                        <td class="text-success">Activo</td>
+                    }
+                    else
+                    {
+                        <td class="text-danger">Inactivo</td>
+                    }
+                    <td>
+                        <a style="color:white;" onclick="meca(id = @item.Id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-success btn-sm">
+                            <i class="fa-solid fa-pencil aria-hidden="true""></i>
+                        </a>
+                        <a href="/admin/delete?id=@item.Id" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+            }
+        </tbody>
+ </table>

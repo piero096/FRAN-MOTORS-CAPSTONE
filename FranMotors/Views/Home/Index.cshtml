@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="flexslider">
+    <ul class="slides">
+        <li>
+            <img src="~/Imagenes/franmotros1.jpg" alt="">
+            <section class="flex-caption">
+                <h1>BIENVENIDO A FRAN MOTORS</h1>
+                <p>UN TALLER CON MAS DE 9 AÑOS DE EXPERIENCIA</p>
+            </section>
+        </li>
+        <li>
+            <img src="~/Imagenes/repuestos.jpg" alt="">
+            <section class="flex-caption">
+                <h1>REPUESTOS PARA MOTOS</h1>
+                <p>CON GRAN VARIEDAD Y CALIDAD</p>
+            </section>
+        </li>
+        <li>
+            <img src="~/Imagenes/01.jpg" alt="">
+            <section class="flex-caption">
+                <h1>FRAN MOTORS</h1>
+                <p>LOREM IPSUM 3</p>
+            </section>
+        </li>
+    </ul>
+</div>
+
+<div class="form-moto">
+    <form class="form contenedor" action="/home/privacy?buscarmoto=" method="post">
+        <div class="item"><h1 class="fonts">Realizar seguimiento</h1></div>
+        <div class="form-item form-item-imput item">
+            <input type="search" class="form-control search" style="border-radius:15px" name="Placa" placeholder="INGRESE NR° DE PLACA" />
+        </div>
+        <div class="item">
+            <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Buscar Placa</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- section -->
+<section id="why_choose_us" class="dark_bg_blue layout_padding cross_layout padding_top_0">
+    <div class="container cont-section">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full center">
+                    <h2 class="heading_main orange_heading">Servicios</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row section-index">
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>MANTENIMIENTO</h4>
+                        <p>Contamos con personal altamente capacitado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>REPARACIÓN</h4>
+                        <p>Es el único taller de motos que cuenta con la mejor y mas actual tecnología para el mantenimiento y reparación de tu motocicleta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>VENTA DE REPUESTOS Y ARTÍCULOS</h4>
+                        <p>Actualmente somos el único taller con atención personalizada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="why_choose_us" class="dark_bg_blue layout_padding cross_layout padding_top_0">
+    <div class="container cont-section">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full center">
+                    <h2 class="heading_main orange_heading">Por que elegirnos?</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row section-index">
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>EQUIPO DE TRABAJO</h4>
+                        <p>Contamos con personal altamente capacitado.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>TECNOLOGÍA </h4>
+                        <p>Es el único taller de motos que cuenta con la mejor y mas actual tecnología para el mantenimiento y reparación de tu motocicleta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="full">
+                    <div class="choose_blog text_align_center">
+                        <h4>ATENCIÓN</h4>
+                        <p>Actualmente somos el único taller con atención personalizada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- Contact Start -->
+<div class="container-fluid py-5 px-0 map-container">
+    <div class="row mt-5 mx-0">
+        <div class="col-12 px-0" style="height: 500px;">
+            <div class="position-relative h-100">
+                <iframe class="position-relative w-100 h-100"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d416.10005851461614!2d-78.5038663507602!3d-7.168331112758656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2spe!4v1666637946218!5m2!1ses-419!2spe"
+                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-md-5 container-footer" style="margin-top: 90px;">
+    <div class="row pt-5 footer-index">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="/" class="navbar-brand">
+                <h1 class="m-0 mt-n2 text-white display-4">FRAN MOTORS</h1>
+            </a>
+            <p>La mejor mecánica de motos.</p>
+            <h6 class="text-uppercase text-white py-2">Síguenos</h6>
+            <div class="d-flex justify-content-start">
+                @*<a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+
+                    <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-primary btn-lg-square" href="#" target="_blank"><i class="fab fa-instagram"></i></a>*@
+                <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/Juan.medina06" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h4 class="text-uppercase text-white mb-4">Contacto</h4>
+            <p>
+                <i class="fa fa-map-marker-alt text-white mr-2"></i>AV. San Martin N°560 - altura de JR. Las Delicias
+            </p>
+            <p><i class="fa fa-phone-alt text-white mr-2"></i>(+51) 948 340 233</p>
+            <p><i class="fa fa-envelope text-white mr-2"></i>juanfranciscovelasquezmedina@gmail.com </p>
+        </div>
+    </div>
+</div>
+<a href="#" class="btnds btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-up"></i></a>
+<!-- Contact End -->
+
+
