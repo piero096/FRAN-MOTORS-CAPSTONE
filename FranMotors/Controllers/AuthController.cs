@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -45,6 +48,11 @@ namespace FranMotors.Controllers
                 ViewBag.Estado = "Su usuario se encuentra inactivo contacte con el administrador.";
                 return View("Login");
             }
+            if (IsReCaptchValid() == false)
+            {
+                ViewBag.Captcha = "Captcha Invalido";
+                return View("Login");
+            }
 
             var claims = new List<Claim> {
                 new Claim(ClaimTypes.Name, Username),
@@ -61,6 +69,26 @@ namespace FranMotors.Controllers
         {
             authService.Logout();
             return RedirectToAction("Login");
+        }
+        public bool IsReCaptchValid()
+        {
+            var result = false;
+            var captchaResponse = Request.Form["g-recaptcha-response"];
+            var secretKey = "6LfQzkAiAAAAAMTQxR1LbSNV7K8twMUFjMbojKK4";
+            var apiUrl = "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}";
+            var requestUri = string.Format(apiUrl, secretKey, captchaResponse);
+            var request = (HttpWebRequest)WebRequest.Create(requestUri);
+
+            using (WebResponse response = request.GetResponse())
+            {
+                using (StreamReader stream = new StreamReader(response.GetResponseStream()))
+                {
+                    JObject jResponse = JObject.Parse(stream.ReadToEnd());
+                    var isSuccess = jResponse.Value<bool>("success");
+                    result = (isSuccess) ? true : false;
+                }
+            }
+            return result;
         }
     }
 }
