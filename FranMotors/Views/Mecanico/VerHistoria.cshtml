@@ -2,17 +2,24 @@
     var moto = (Motocicleta)ViewBag.moto;
 }
 
-<center><h4 class="mb-3"><i class="fa-regular fa-rectangle-list"></i> Historia de Modificaciones</h4></center>
+<center><h4 class="mb-3" style="margin-top:2%;"><i class="fa-regular fa-rectangle-list"></i> Historia de Modificaciones</h4></center>
 <center><a class="btn btn-info" href="/mecanico/listmoto?id=@moto.IdCliente"><i class="fa-solid fa-arrow-right-from-bracket"></i> Regrese a su Historial de Motocicletas</a></center>
 <br>
 @foreach (var item in Model)
 {
 
     <center>
-        <div class="card bg-light mb-3" style="max-width: 34rem;">
+        <div class="card bg-light mb-3" style="max-width: 32rem;">
             <div class="card-header" style="text-align:left;">
                 <ul style="list-style: none;">
-                    <li><strong>Historia realizada por:</strong> @item.Tipo</li>
+                    @if (item.Tipo == "Cliente")
+                    {
+                        <li><p class="btn btn-success float-right">@item.Tipo</p></li>
+                    }
+                    @if (item.Tipo == "Mecanico")
+                    {
+                        <li><p class="btn btn-danger float-right">@item.Tipo</p></li>
+                    }
                     <li><strong>Fecha de Modificación: </strong>@item.Fecha</li>
                     @if (item.Tipo == "Mecanico")
                     {
@@ -30,3 +37,4 @@
 
 }
 <center><a class="btn btn-info" href="/mecanico/listmoto?id=@moto.IdCliente"><i class="fa-solid fa-arrow-right-from-bracket"></i> Regrese a su Historial de Motocicletas</a></center>
+<hr class="text-dark" size=4>
