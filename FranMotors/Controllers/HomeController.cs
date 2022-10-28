@@ -35,12 +35,13 @@ namespace FranMotors.Controllers
 
         public IActionResult Privacy(Motocicleta moto)
         {
+            accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
             if (IsReCaptchValid() == false)
             {
                 ViewBag.Captcha = "Captcha Invalido";
                 return View("Index");
             }
-            accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
+            
             var bmoto = homeRepository.GetAllMotocicleta(moto);
             foreach (var item in bmoto)
             {
