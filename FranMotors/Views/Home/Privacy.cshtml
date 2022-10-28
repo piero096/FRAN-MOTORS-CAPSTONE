@@ -7,21 +7,25 @@
 
     if (item.EstadoMoto == "EN INGRESO")
     {
-        <div class="container-estado cont-ingreso">
-            <img class="img-placa" src="/Imagenes/imagen1.jpg"
-                 alt="">
-            <div class="centrado">
-                <p class="placain">@item.Placa</p>
-                <p>@item.EstadoMoto</p>
-            </div>
-        </div>
+<div class="container-estado">
+    <img class="img-placa" src="/Imagenes/imagen1.jpg"
+         alt="">
+    <p class="placain"> PLACA: @item.Placa</p>
+    <span>MOTOCICLETA @item.EstadoMoto</span>
+
+</div>
     }
     else if (item.EstadoMoto == "EN REPARACIÓN")
     {
-        <div class="container-estado cont-reparacion">
-            <p class="placare">@item.Placa</p>
-            <p>@item.EstadoMoto</p>
-        </div>
+<div class="container-estado cont-reparacion">
+    <div>
+        <p class="placare">@item.Placa</p>
+    </div>
+    <div>
+        <p>@item.EstadoMoto</p>
+    </div>
+    
+</div>
     }
     else if (item.EstadoMoto == "EN MANTENIMIENTO")
     {
