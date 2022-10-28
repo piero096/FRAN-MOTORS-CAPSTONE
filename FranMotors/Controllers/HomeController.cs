@@ -4,10 +4,13 @@ using FranMotors.Models;
 using FranMotors.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace FranMotors.Controllers
@@ -32,6 +35,11 @@ namespace FranMotors.Controllers
 
         public IActionResult Privacy(Motocicleta moto)
         {
+            if (IsReCaptchValid() == false)
+            {
+                ViewBag.Captcha = "Captcha Invalido";
+                return View("Index");
+            }
             accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
             var bmoto = homeRepository.GetAllMotocicleta(moto);
             foreach (var item in bmoto)
@@ -50,6 +58,26 @@ namespace FranMotors.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public bool IsReCaptchValid()
+        {
+            var result = false;
+            var captchaResponse = Request.Form["g-recaptcha-response"];
+            var secretKey = "6LfQzkAiAAAAAMTQxR1LbSNV7K8twMUFjMbojKK4";
+            var apiUrl = "https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}";
+            var requestUri = string.Format(apiUrl, secretKey, captchaResponse);
+            var request = (HttpWebRequest)WebRequest.Create(requestUri);
+
+            using (WebResponse response = request.GetResponse())
+            {
+                using (StreamReader stream = new StreamReader(response.GetResponseStream()))
+                {
+                    JObject jResponse = JObject.Parse(stream.ReadToEnd());
+                    var isSuccess = jResponse.Value<bool>("success");
+                    result = (isSuccess) ? true : false;
+                }
+            }
+            return result;
         }
     }
 }
