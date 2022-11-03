@@ -41,7 +41,11 @@ namespace FranMotors.Controllers
                 ViewBag.Captcha = "Captcha Invalido";
                 return View("Index");
             }
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> rama_C
             var bmoto = homeRepository.GetAllMotocicleta(moto);
             foreach (var item in bmoto)
             {

@@ -14,11 +14,11 @@
                 <ul style="list-style: none;">
                     @if (item.Tipo == "Cliente")
                     {
-                        <li><p class="btn btn-success float-right">@item.Tipo</p></li>
+                       <li><p class="btn btn-success float-right" style="width:100px;">@item.Tipo</p></li>
                     }
                     @if (item.Tipo == "Mecanico")
                     {
-                        <li><p class="btn btn-danger float-right">@item.Tipo</p></li>
+                        <li><p class="btn btn-danger float-right" style="width:100px;">@item.Tipo</p></li>
                     }
                     <li><strong>Fecha de Modificación: </strong>@item.Fecha</li>
                     @if (item.Tipo == "Mecanico")

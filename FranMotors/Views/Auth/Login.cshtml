@@ -1,36 +1,28 @@
 ﻿<link rel="stylesheet" href="~/css/login.css" />
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<div class="container">
-    <form action="/auth/login" class="formulario" method="post">
-        <h1 class="main-title">Iniciar Sesión</h1>
-        <div class="contenedor">
-            @*@if (TempData["AuthMessage"] != null)
-        {
-            <p class="text-danger">@TempData["AuthMessage"]</p>
-        }
-        @if (TempData["AuthMessageEstado"] != null)
-        {
-            <p class="text-danger">@TempData["AuthMessageEstado"]</p>
-        }*@
-            <p class="text-danger">@ViewBag.Error</p>
-            <p class="text-danger">@ViewBag.Estado</p>
-            <p class="text-danger">@ViewBag.Captcha</p>
-            <div class="input-contendor">
-                <i class="fas fa-user icon"></i>
-                <input type="text" name="username" placeholder="Usuario" />
-            </div>
-            <div class="input-contendor">
-                <i class="fas fa-key icon"></i>
-                <input type="password" name="password" placeholder="Contraseña" />
-            </div>
 
-            <div class="mb-3">
-                <div class="g-recaptcha" data-sitekey="6LfQzkAiAAAAANph3zpu7g30MgfMAGmerGXRamau"></div>
-            </div>
 
-            <div>
-                <input type="submit" name="name" value="Iniciar Sesión" class="button" />
-            </div>
+<center>
+    <div class="card bg-light mb-3" style="max-width: 31rem; margin-top: 4%;">
+        <h3><i class="fa-solid fa-house-user"></i> Inicio de Sesión</h3>
+        <div class="card-header" style="text-align: left;">
+            <form action="/auth/login" class="formulario" method="post">
+                <center><p class="text-danger">@ViewBag.Error</p></center>
+                <center><p class="text-danger">@ViewBag.Estado</p></center>
+                <center><p class="text-danger">@ViewBag.Captcha</p></center>
+                <div class="usuario">
+                    <input type="text" class="text-lowercase" name="username" placeholder="Ingrese su Usuario..." />
+                </div>
+                <div class="contrasena">
+                    <input type="password" name="password" placeholder="ingrese su contraseña..." />
+                </div>
+                <center>
+                <div class="mb-3">
+                    <div class="g-recaptcha" data-sitekey="6LfQzkAiAAAAANph3zpu7g30MgfMAGmerGXRamau"></div>
+                </div>
+                </center>
+                <input type="submit" name="name" value="Ingresar" class="btn btn-success color" style="width: 90%; font-size: 20px; margin:25px;" />
+            </form>
         </div>
-    </form>
-</div>
+    </div>
+</center>
