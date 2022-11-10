@@ -8,88 +8,86 @@
 
 
 <center>
-    <div class="container">
+    <div class="container" style="margin-top:2%;">
         <div class="card" style="width:60%">
-                <h4 class="card-header"><strong><i class="fa-solid fa-motorcycle"></i> Registro de Motocicletas </strong></h4>  
-                <div class="card-body">
-                    <form action="/mecanico/registermoto?id=@cliente.Id" method="post" enctype="multipart/form-data">
-                        <div class="mt-2 mb-2">
-                            <input class="form-control" type="text" name="Placa" placeholder="Ingrese Placa" />
-                            <span class="text-danger">@Html.ValidationMessage("Placa")</span>
-                            <br>
+            <h4 class="card-header"><strong><i class="fa-solid fa-motorcycle"></i> Registro de Motocicletas </strong></h4>
+            <div class="card-body">
+                <form action="/mecanico/registermoto?id=@cliente.Id" method="post" enctype="multipart/form-data">
+                    <div class="mt-2 mb-2">
+                        <input class="form-control" type="text" name="Placa" placeholder="Ingrese Placa" />
+                        <span class="text-danger">@Html.ValidationMessage("Placa")</span>
+                        <br>
 
-                            <input class="form-control" type="text" name="Marca" placeholder="Ingrese Marca" />
-                            <span class="text-danger">@Html.ValidationMessage("Marca")</span>
-                            <br>
+                        <input class="form-control" type="text" name="Marca" placeholder="Ingrese Marca" />
+                        <span class="text-danger">@Html.ValidationMessage("Marca")</span>
+                        <br>
 
-                            <input class="form-control" type="text" name="NumSerie" placeholder="Ingrese NumSerie" />
-                            <span class="text-danger">@Html.ValidationMessage("NumSerie")</span>
-                            <br>
+                        <input class="form-control" type="text" name="NumSerie" placeholder="Ingrese NumSerie" />
+                        <span class="text-danger">@Html.ValidationMessage("NumSerie")</span>
+                        <br>
 
-                            <input class="form-control" type="text" name="Cilindrada" placeholder="Ingrese Cilindrada" />
-                            <span class="text-danger">@Html.ValidationMessage("Cilindrada")</span>
-                            <br>
+                        <input class="form-control" type="text" name="Cilindrada" placeholder="Ingrese Cilindrada" />
+                        <span class="text-danger">@Html.ValidationMessage("Cilindrada")</span>
+                        <br>
 
-                            <input class="form-control" type="date" name="Año" placeholder="Ingrese Año" />
-                            <span class="text-danger">@Html.ValidationMessage("Año")</span>
-                            <br>
-                            <strong><span class="float-left">Adjuntar foto de Moto</span></strong>
-                            <br>
-                            <div class="mb-4">
-                                <input class="float-left" type="file" multiple id="add-new-photo" name="imagesMoto">
-                            </div>
-                            <br>
-                            <div class="container">
-                                <section id="Images" class="images-cards">
-                                    <div class="">
-                                        <div id="add-photo-container">
-                                            <div class="add-new-photo first" id="add-photo">
-                                                <span><i class="icon-camera"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                            <strong><span class="float-left">Adjuntar Tarjeta de Propiedad</span></strong>
-                            <br>
-                            <div class="mb-4">
-                                <input class="float-left" type="file" multiple id="add-photo-tarjeta" name="imagesTarjeta">
-                            </div>
-                            <br>
-                            <div class="container">
-                                <section id="Images-tarjeta" class="images-cards">
-                                    <div class="">
-                                        <div id="add-photo-container-tarjeta">
-                                            <div class="add-photo-tarjeta first" id="add-photo">
-                                                <span><i class="icon-camera"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                            <select class="form-control" name="EstadoMoto">
-                                <option value="En Ingreso">En Ingreso</option>
-                                <option value="En Reparación">En Reparación</option>
-                                <option value="En Mantenimiento">En Mantenimiento</option>
-                                <option value="Para Entrega">Para Entrega</option>
-                            </select>
-<<<<<<< HEAD
-                            <div>
-                                <br>
-                                <strong><span class="float-left">Detalles de usuario</span></strong>
-                                <textarea class="form-control" rows="3" id="" name="detalle"></textarea>
-                            </div>
-=======
->>>>>>> rama_B
+                        <input class="form-control" type="date" name="Año" placeholder="Ingrese Año" />
+                        <span class="text-danger">@Html.ValidationMessage("Año")</span>
+                        <br>
+                        <strong><span class="float-left">Adjuntar foto de Moto</span></strong>
+                        <br>
+                        <div class="mb-4">
+                            <input class="float-left" type="file" multiple id="add-new-photo" name="imagesMoto">
                         </div>
-                        <hr class="text-dark" size=4>
-                        <button class="btn btn-info btn-lg"><i class="fa-solid fa-cart-plus"></i> Realizar Registro </button>
-                        <a class="btn btn-danger btn-lg" href="/mecanico/listcliente">Cancelar</a>
-                    </form>
-                </div>
+                        <br>
+                        <div class="container">
+                            <section id="Images" class="images-cards">
+                                <div class="">
+                                    <div id="add-photo-container">
+                                        <div class="add-new-photo first" id="add-photo">
+                                            <span><i class="icon-camera"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <strong><span class="float-left">Adjuntar Tarjeta de Propiedad</span></strong>
+                        <br>
+                        <div class="mb-4">
+                            <input class="float-left" type="file" multiple id="add-photo-tarjeta" name="imagesTarjeta">
+                        </div>
+                        <br>
+                        <div class="container">
+                            <section id="Images-tarjeta" class="images-cards">
+                                <div class="">
+                                    <div id="add-photo-container-tarjeta">
+                                        <div class="add-photo-tarjeta first" id="add-photo">
+                                            <span><i class="icon-camera"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <select class="form-control" name="EstadoMoto">
+                            <option value="En Ingreso">En Ingreso</option>
+                            <option value="En Reparación">En Reparación</option>
+                            <option value="En Mantenimiento">En Mantenimiento</option>
+                            <option value="Para Entrega">Para Entrega</option>
+                        </select>
+                        <div>
+                            <br>
+                            <strong><span class="float-left">Detalles de usuario</span></strong>
+                            <textarea class="form-control" rows="3" id="" name="detalle"></textarea>
+                        </div>
+
+                    </div>
+                    <hr class="text-dark" size=4>
+                    <button class="btn btn-info btn-lg"  disabled="disabled"><i class="fa-solid fa-cart-plus"></i> Realizar Registro </button>
+                    <a class="btn btn-danger btn-lg" href="/mecanico/listcliente">Cancelar</a>
+                </form>
+            </div>
         </div>
     </div>
-
+    <hr class="text-dark" size=4>
 </center>
 @section Scripts
 {

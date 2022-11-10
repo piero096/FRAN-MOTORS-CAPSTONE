@@ -100,10 +100,11 @@ button {
 .section-index {
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    background: #2b3137;
-    -webkit-box-shadow: 12px 12px 24px #252a2f, -12px -12px 24px #31383f;
-    box-shadow: 12px 12px 24px #252a2f, -12px -12px 24px #31383f;
+    background: #343e47;
+    -webkit-box-shadow: 12px 12px 24px #2c353c, -12px -12px 24px #3c4752;
+    box-shadow: 12px 12px 24px #2c353c, -12px -12px 24px #3c4752;
 }
+
 .cont-section {
     padding-bottom: 30px;
     padding-top: 30px;

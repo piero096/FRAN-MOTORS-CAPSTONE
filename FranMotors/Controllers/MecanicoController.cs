@@ -154,11 +154,18 @@ namespace FranMotors.Controllers
             var motoclie = context.Motocicletas.Find(motoid);
             correo.From = new MailAddress("riosan375@gmail.com");
             correo.To.Add(correoCliente.Correo);
-            correo.Subject = "Estado de motocicleta";
-            correo.Body = "ESTADO EN EL QUE SE ENCUENTRA LA MOTO: " + motoclie.EstadoMoto + motoclie.Placa + motoclie.Marca;
+            correo.Subject = "FRAN MOTORS::ESTADO DE MOTOCICLETA";
+            correo.Body += "<font style='font-size:11.0pt; font-family:Calibri;'> <br />Estimado Cliente:<br /><br /> " +
+                "Por parte de FRAN MOTORS, hacemos presente por este medio la información de su estado de motocicleta: <br /><br />  " +
+                "<strong>ESTADO : </ strong >" + motoclie.EstadoMoto  +"<br /><br /> <strong>PLACA : </strong>"+ motoclie.Placa +
+                "<br /><br /> <strong>MARCA : </strong>"+ motoclie.Marca + "<br /><br />" +
+                "Esta información es se estara actualizando conforme al manteminiento/raparación de su motocileta.<br /><br />" +
+                "Nota: Mensaje automático, por favor no responder<br /><br />Importante!! <br /><br /> <br /><br /> </font>";
+
+            //correo.Body = "Estimado cliente, este correo es para informarle sobre el estado de su motocicleta."; 
+            //correo.Body = "MOTOCICLETA " + motoclie.EstadoMoto + "\t" +"PLACA: "+ motoclie.Placa + "\t" +"MARCA: " + System.Environment.NewLine; ;
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
-
             SmtpClient client = new SmtpClient();
             client.Host = "smtp.gmail.com";
             client.Port = 587;

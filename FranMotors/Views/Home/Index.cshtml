@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div class="flexslider">
     <ul class="slides">
         <li>
@@ -29,9 +31,15 @@
 
 <div class="form-moto">
     <form class="form contenedor" action="/home/privacy?buscarmoto=" method="post">
-        <div class="item"><h1 class="fonts">Realizar seguimiento</h1></div>
+
+        <div class="item"><h1 class="fonts">Realizar seguimiento</h1>
+                    <p class="text-danger">@ViewBag.Captcha</p>
+                    </div>
         <div class="form-item form-item-imput item">
             <input type="search" class="form-control search" style="border-radius:15px" name="Placa" placeholder="INGRESE NR° DE PLACA" />
+        </div>
+        <div class="mb-3">
+            <div class="g-recaptcha" data-sitekey="6LfQzkAiAAAAANph3zpu7g30MgfMAGmerGXRamau"></div>
         </div>
         <div class="item">
             <button class="learn-more">
