@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿.contenedor {
     position: absolute;
     top: 50%;
@@ -15,4 +16,74 @@
     }
 .text-lowercase {
     
+=======
+﻿
+body {
+    background: linear-gradient(150deg, #343A40, #F2F3F4);
+    height: 100vh;
 }
+
+h3 {
+    text-align: center;
+    padding: 20px 10px 20px 0;
+}
+
+.formu form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .usuario {
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0;
+}
+
+form .contrasena {
+    position: relative;
+    border-bottom: 1px solid #adadad;
+    margin: 30px 0;
+}
+
+.usuario input {
+    width: 100%;
+    padding: 0 5px;
+    font-size: 16px;
+    height: 30px;
+    color: #000000;
+    border: none;
+    background: none;
+    outline: none;
+    margin-top:-10px;
+}
+
+.contrasena input {
+    width: 100%;
+    padding: 0 5px;
+    font-size: 16px;
+    height: 30px;
+    color: #000000;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.color {
+    background: #F36B2A;
+    border-color: #F36B2A;
+>>>>>>> master
+}
+
+.color:hover {
+    background: #F38853;
+    border-color: #F38853;
+    transition: -5s;
+}
+
+
+
+
+
+
+
+
