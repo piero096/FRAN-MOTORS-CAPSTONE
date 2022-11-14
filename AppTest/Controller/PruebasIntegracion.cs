@@ -31,7 +31,7 @@ namespace AppTest.Controller
 
         }
         [Test]
-        public void TestRegisterMecanicoAndClienteSuccessFail()
+        public void TestRegisterMecanicoAndClienteFail()
         {
             var mock = new Mock<IAdminRepository>();
             var mock2 = new Mock<IMecanicoRepository>();
