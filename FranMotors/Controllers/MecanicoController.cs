@@ -159,7 +159,7 @@ namespace FranMotors.Controllers
                 "Por parte de FRAN MOTORS, hacemos presente por este medio la información de su estado de motocicleta: <br /><br />  " +
                 "<strong>ESTADO : </ strong >" + motoclie.EstadoMoto  +"<br /><br /> <strong>PLACA : </strong>"+ motoclie.Placa +
                 "<br /><br /> <strong>MARCA : </strong>"+ motoclie.Marca + "<br /><br />" +
-                "Esta información es se estara actualizando conforme al manteminiento/raparación de su motocileta.<br /><br />" +
+                "Esta información es se estara actualizando conforme al manteminiento/reparación de su motocileta.<br /><br />" +
                 "Nota: Mensaje automático, por favor no responder<br /><br />Importante!! <br /><br /> <br /><br /> </font>";
 
             //correo.Body = "Estimado cliente, este correo es para informarle sobre el estado de su motocicleta."; 

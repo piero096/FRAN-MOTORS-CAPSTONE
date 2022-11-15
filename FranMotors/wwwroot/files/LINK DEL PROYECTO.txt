@@ -1,0 +1,16 @@
+GRUPO 03
+
+TÍTULO:
+Aplicación Web Para la Optimización de Procesos de
+Mantenimiento de Motocicletas de la Empresa Fran Motors
+
+Autores:
+LAVY AGUILAR, Piero Alessandro
+LEYVA BLANCO, Cristian David
+PRIETO VILCHEZ, Renato Antonio
+RIOS COTRINA, Angel Benjamin
+TERRONES CALDERÓN, Anita Mabel
+-------------------------------------------------------------------------
+LINK DEL PROYECTO EN GIT
+
+https://github.com/piero096/FRAN-MOTORS-CAPSTONE
