@@ -152,7 +152,7 @@ namespace FranMotors.Controllers
             MailMessage correo = new MailMessage();
             var correoCliente = context.Clientes.Where(o => o.Id == idcliente).FirstOrDefault();
             var motoclie = context.Motocicletas.Find(motoid);
-            correo.From = new MailAddress("riosan375@gmail.com");
+            correo.From = new MailAddress("Juanfranciscovelasquez283@gmail.com");
             correo.To.Add(correoCliente.Correo);
             correo.Subject = "FRAN MOTORS::ESTADO DE MOTOCICLETA";
             correo.Body += "<font style='font-size:11.0pt; font-family:Calibri;'> <br />Estimado Cliente:<br /><br /> " +
@@ -171,7 +171,7 @@ namespace FranMotors.Controllers
             client.Port = 587;
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
-            var credentials = new System.Net.NetworkCredential("riosan375@gmail.com", "vzkxdsgpoimkuxim");
+            var credentials = new System.Net.NetworkCredential("Juanfranciscovelasquez283@gmail.com", "yuggwqegikaxubzo");
             client.Credentials = credentials;
             client.Send(correo);
         }
