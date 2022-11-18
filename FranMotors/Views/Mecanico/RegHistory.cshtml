@@ -21,13 +21,15 @@
                         </select>
                     </div>
                     <div class="mb-2">
-                        <input type="text" name="Detalle" class="form-control" placeholder="Escriba lo que se modificó" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                        <input type="text" name="Detalle" class="form-control" required placeholder="Escriba lo que se modificó" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                        <span class="text-danger">@Html.ValidationMessage("Detalle")</span>
                     </div>
                     <div>
-                        <input id="precio" type="number" step="any" name="Precio" class="form-control" placeholder="Precio" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                        <input id="precio" type="number" step="any" name="Precio" required class="form-control" placeholder="Precio" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                        <span class="text-danger">@Html.ValidationMessage("Precio")</span>
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-info btnAgregar"><i class="fa-solid fa-plus"></i> Registrar</button>
+                        <button class="btn btn-info btnAgregar"  ><i class="fa-solid fa-plus"></i> Registrar</button>
                     </div>
                 </form>
             </div>

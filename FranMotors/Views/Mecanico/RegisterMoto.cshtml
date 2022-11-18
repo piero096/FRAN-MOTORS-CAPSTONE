@@ -14,23 +14,23 @@
             <div class="card-body">
                 <form action="/mecanico/registermoto?id=@cliente.Id" method="post" enctype="multipart/form-data">
                     <div class="mt-2 mb-2">
-                        <input class="form-control" type="text" name="Placa" placeholder="Ingrese Placa" />
+                        <input class="form-control" type="text" name="Placa" placeholder="Ingrese Placa" required />
                         <span class="text-danger">@Html.ValidationMessage("Placa")</span>
                         <br>
 
-                        <input class="form-control" type="text" name="Marca" placeholder="Ingrese Marca" />
+                        <input class="form-control" type="text" name="Marca" placeholder="Ingrese Marca"  required/>
                         <span class="text-danger">@Html.ValidationMessage("Marca")</span>
                         <br>
 
-                        <input class="form-control" type="text" name="NumSerie" placeholder="Ingrese NumSerie" />
+                        <input class="form-control" type="text" name="NumSerie" placeholder="Ingrese NumSerie" required />
                         <span class="text-danger">@Html.ValidationMessage("NumSerie")</span>
                         <br>
 
-                        <input class="form-control" type="text" name="Cilindrada" placeholder="Ingrese Cilindrada" />
+                        <input class="form-control" type="text" name="Cilindrada" placeholder="Ingrese Cilindrada" required />
                         <span class="text-danger">@Html.ValidationMessage("Cilindrada")</span>
                         <br>
 
-                        <input class="form-control" type="date" name="Año" placeholder="Ingrese Año" />
+                        <input class="form-control" type="date" name="Año" placeholder="Ingrese Año" required />
                         <span class="text-danger">@Html.ValidationMessage("Año")</span>
                         <br>
                         <strong><span class="float-left">Adjuntar foto de Moto</span></strong>
@@ -67,11 +67,11 @@
                                 </div>
                             </section>
                         </div>
-                        <select class="form-control" name="EstadoMoto">
-                            <option value="En Ingreso">En Ingreso</option>
-                            <option value="En Reparación">En Reparación</option>
-                            <option value="En Mantenimiento">En Mantenimiento</option>
-                            <option value="Para Entrega">Para Entrega</option>
+                        <select class="form-control" name="EstadoMoto" required>
+                            <option required value="En Ingreso">En Ingreso</option>
+                            <option required value="En Reparación">En Reparación</option>
+                            <option required value="En Mantenimiento">En Mantenimiento</option>
+                            <option required value="Para Entrega">Para Entrega</option>
                         </select>
                     </div>
                     <hr class="text-dark" size=4>

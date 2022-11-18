@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 }
 
+<link rel="stylesheet" href="~/css/ampliarImg.css" />
+
 <center><h4 class="mb-3" style="margin-top:2%;"><i class="fa-regular fa-rectangle-list"></i> Historial de Motocicletas</h4></center>
 <div class="container overflow-hidden">
     <div class="row justify-content-around">
@@ -13,7 +15,19 @@
             <center>
                 <div class="card bg-light mb-3 " style="max-width: 34rem;">
                     <div class="card-header">
-                        <img src="@item.ImgMoto" class="rounded mx-auto d-block" width="50%">
+                        @*<img style="cursor:pointer;" src="@item.ImgMoto" id="moto" alt="Snow" class="rounded float-left" width="60%" />*@
+                        <img src="@item.ImgMoto" class="rounded float-left" width="60%">
+                        <img style="cursor:pointer;" src="@item.ImgTarjeta" id="@item.Id" alt="Snow" class="rounded float-right" width="30%" />
+                        <div id="myModal" class="modal ModeloCss">
+                            <span class="close2">&times;</span>
+                            <img class="modal-content contenedorXd2" id="img01">
+                        </div>
+                        <div id="myModal" class="modal ModeloCss">
+                            <span class="close2">&times;</span>
+                            <img class="modal-content contenedorXd3" id="img02">
+                        </div>
+
+                        @*<img src="@item.ImgMoto" class="rounded mx-auto d-block" width="50%">*@
                     </div>
                     <div class="card-body" style="text-align:left;">
                         <ul style="list-style: none;">
@@ -40,6 +54,21 @@
                     </div>
                 </div>
             </center>
+
+            <script>
+                    var modal = document.getElementById("myModal");
+                    var img = document.getElementById("@item.Id");
+                    var modalImg = document.getElementById("img01");
+                    img.onclick = function () {
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                    }
+                    var span = document.getElementsByClassName("close2")[0];
+                    span.onclick = function () {
+                        modal.style.display = "none";
+                    }
+            </script>
         }
     </div>
 </div>
