@@ -3,6 +3,7 @@ using FranMotors.Manager;
 using FranMotors.Models;
 using FranMotors.Repositories;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace FranMotors.Controllers
 {
+    [Authorize]
     public class MecanicoController : Controller
     {
         private FranMotorsContext context;
