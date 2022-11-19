@@ -28,16 +28,15 @@ namespace FranMotors.Repositories
         public Account Login(string Username, string Password)
         {
             return context.Accounts
-                .Where(o => o.Username.ToLower() == Username.ToLower() && o.Password == CreateHash(Password)).FirstOrDefault();
+                .Where(o => o.Username.ToLower() == Username.ToLower() && o.Password == GetSHA256(Password)).FirstOrDefault();
         }
         [HttpGet]
-        private string CreateHash(string input)
+        public string GetSHA256(string str)
         {
-            var sha = SHA512.Create();
-            input += configuration.GetValue<string>("Key");
-            var hash = sha.ComputeHash(Encoding.Default.GetBytes(input));
-
-            return Convert.ToBase64String(hash);
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(str);
+            result = Convert.ToBase64String(encryted);
+            return result;
         }
     }
 }

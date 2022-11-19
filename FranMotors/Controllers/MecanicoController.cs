@@ -77,7 +77,7 @@ namespace FranMotors.Controllers
         public IActionResult VerHistoria(int id, int idcliente)
         {
             var hist = mecanicoRepository.LisHistorialForMoto(id, idcliente);
-            accountViewBagManager.ConfiguraViewBagForViewListHistory(ViewBag, idcliente);
+            accountViewBagManager.ConfiguraViewBagForViewListHistory(ViewBag, id, idcliente);
             accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
             return View(hist);
         }
@@ -132,6 +132,23 @@ namespace FranMotors.Controllers
 
             return RedirectToAction("ListMoto", new { Id = idcliente });
         }
+        [HttpGet]
+        public IActionResult EditHistoria(int id, int idmoto, int idcliente)
+        {
+            accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
+            ViewBag.cliente = context.Clientes.Where(o => o.Id == idcliente).FirstOrDefault();
+            ViewBag.moto = context.Motocicletas.Where(o => o.Id == idmoto).FirstOrDefault();
+            var edHistoria = context.Historials.Where(o => o.Id == id).FirstOrDefault();
+
+            return View(edHistoria);
+        }
+        [HttpPost]
+        public IActionResult EditHistoria(Historial hist, int idmoto, int idcliente)
+        {
+            mecanicoRepository.EditarHistory(hist, idmoto, idcliente);
+
+            return RedirectToAction("VerHistoria", new { Id = idmoto, Idcliente = idcliente});
+        }        
         [HttpGet]
         public IActionResult Delete(int id)
         {

@@ -45,6 +45,7 @@ namespace FranMotors.Controllers
         {
             accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
             var meca = context.Accounts.Where(o => o.Id == id).FirstOrDefault();
+            ViewBag.Desencriptar = Desencriptar(meca.Password);
             return View(meca);
         }
         [HttpPost]
@@ -61,8 +62,7 @@ namespace FranMotors.Controllers
         }
         [HttpPost]
         public IActionResult Edit(Account account, string estado)
-        {
-
+        {            
             adminRepository.Edit(account,estado);
 
             return RedirectToAction("Mecanico");
@@ -77,6 +77,13 @@ namespace FranMotors.Controllers
 
             return RedirectToAction("Mecanico");
         }
-
+        public string Desencriptar(string pass)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(pass);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
     }
 }

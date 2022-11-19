@@ -20,11 +20,9 @@ namespace FranMotors.Repositories
     public class AdminRepository : IAdminRepository
     {
         private readonly FranMotorsContext context;
-        private IConfiguration configuration;
-        public AdminRepository(FranMotorsContext context, IConfiguration configuration)
+        public AdminRepository(FranMotorsContext context)
         {
             this.context = context;
-            this.configuration = configuration;
         }
         public void Edit(Account account, string estado)
         {
@@ -35,6 +33,7 @@ namespace FranMotors.Repositories
             accounts.Correo = account.Correo;
             accounts.Telefono = account.Telefono;
             accounts.Username = account.Username.ToLower();
+            accounts.Password = GetSHA256(account.Password);
             if (estado == "Activo")
             {
                 accounts.Estado = true;
@@ -61,17 +60,24 @@ namespace FranMotors.Repositories
             account.Tipo = "Mecanico";
             account.Estado = true;
             account.Username = account.Username.ToLower();
-            account.Password = CreateHash(account.Password);
+            account.Password = GetSHA256(account.Password);
             context.Accounts.Add(account);
             context.SaveChanges();
         }
-        private string CreateHash(string input)
+        public string GetSHA256(string str)
         {
-            var sha = SHA512.Create();
-            input += configuration.GetValue<string>("Key");
-            var hash = sha.ComputeHash(Encoding.Default.GetBytes(input));
-
-            return Convert.ToBase64String(hash);
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(str);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+        public string Desencriptar(string pass)
+        {
+            string result = string.Empty;
+            byte[] decryted = Convert.FromBase64String(pass);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
         }
     }
 }

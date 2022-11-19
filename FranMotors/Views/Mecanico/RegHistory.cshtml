@@ -44,8 +44,10 @@
             var TipoCambio = $('#Tipo').val();
             if (TipoCambio == "Cliente") {
                 $('#precio').attr('hidden', 'hidden');
+                $('#precio').removeAttr('required', 'required');
             } else {
                 $('#precio').removeAttr('hidden', 'hidden');
+                $('#precio').attr('required', 'required');
             }
         });
     </script>

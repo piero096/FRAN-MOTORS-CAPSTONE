@@ -19,6 +19,7 @@ namespace FranMotors.Repositories
         List<Historial> LisHistorialForMoto(int id, int idcliente);
         List<Motocicleta> ListMotoForClient(int id);
         void EditarMoto(Motocicleta moto, int idcliente);
+        void EditarHistory(Historial hist, int idmoto, int idcliente);
         Account LoggedUser();
     }
     public class MecanicoRepository : IMecanicoRepository
@@ -46,7 +47,7 @@ namespace FranMotors.Repositories
 
         public List<Motocicleta> ListMotoForClient(int id)
         {            
-            return context.Motocicletas.Where(o => o.IdCliente == id).ToList();
+            return context.Motocicletas.OrderByDescending(o => o.Año).Where(o => o.IdCliente == id).ToList();
         }
 
         public void RegisterMoto(int id, Motocicleta moto, List<IFormFile> imagesMoto, List<IFormFile> imagesTarjeta)
@@ -100,7 +101,7 @@ namespace FranMotors.Repositories
 
         public List<Historial> LisHistorialForMoto(int id, int idcliente)
         {
-            return context.Historials.Where(o => o.IdMoto == id).ToList();
+            return context.Historials.Where(o => o.IdMoto == id).OrderByDescending(o => o.Fecha).ToList();
         }
 
         public void EditarMoto(Motocicleta moto, int idcliente)
@@ -111,6 +112,13 @@ namespace FranMotors.Repositories
             editmoto.NumSerie = moto.NumSerie.ToUpper();
             editmoto.Cilindrada = moto.Cilindrada.ToUpper();
             editmoto.EstadoMoto = moto.EstadoMoto.ToUpper();
+            context.SaveChanges();
+        }
+        public void EditarHistory(Historial hist, int idmoto, int idcliente)
+        {
+            var editHistoria = context.Historials.Find(hist.Id);
+            editHistoria.Detalle = hist.Detalle;
+            editHistoria.Precio = hist.Precio;
             context.SaveChanges();
         }
         private string SaveFile(IFormFile item)
@@ -125,6 +133,8 @@ namespace FranMotors.Repositories
                 stream.Close();
             }
             return "/" + relativePath.Replace('\\', '/');
-        }        
+        }
+
+        
     }
 }

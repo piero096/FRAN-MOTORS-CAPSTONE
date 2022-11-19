@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+    var moto = (Motocicleta)ViewBag.moto;
+    var cliente = (Cliente)ViewBag.cliente;
+}
+<form id="crear" action="/mecanico/EditHistoria?id=@Model.Id" method="post">
+    <input type="text" hidden name="idmoto" value="@moto.Id" />
+    <input type="text" hidden name="idcliente" value="@cliente.Id" />
+    <div class="mb-2">
+        <input type="text" value="@Model.Detalle" name="Detalle" class="form-control" required placeholder="Escriba lo que se modificó" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+        <span class="text-danger">@Html.ValidationMessage("Detalle")</span>
+    </div>
+    @if (Model.Tipo == "Mecanico")
+    {
+        <div>
+            <input id="precio" value="@Model.Precio" type="number" step="any" name="Precio" required class="form-control" placeholder="Precio" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+            <span class="text-danger">@Html.ValidationMessage("Precio")</span>
+        </div>
+    }
+    <div class="modal-footer">
+        <button class="btn btn-info"><i class="fa-solid fa-plus"></i> Editar</button>
+    </div>
+</form>

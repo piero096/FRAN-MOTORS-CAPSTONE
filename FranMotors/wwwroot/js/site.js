@@ -17,6 +17,16 @@
 //        $("#regisMeca").html(resp);
 //    });
 //});
+$(document).on('change', '#Tipo', function (event) {
+    var TipoCambio = $('#Tipo').val();
+    if (TipoCambio == "Cliente") {
+        $('#precio').attr('hidden', 'hidden');
+        $('#precio').removeAttr('required', 'required');
+    } else {
+        $('#precio').removeAttr('hidden', 'hidden');
+        $('#precio').attr('required', 'required');
+    }
+});
 
 function clien(id) {
     var request = $.ajax({
@@ -36,6 +46,15 @@ $reques.done(function (e) {
     $('.listMeca').html(e);
 });
 
+function hist(id, idmoto, idcliente) {
+    var request = $.ajax({
+        url: '/mecanico/EditHistoria?id=' + id + '&idmoto=' + idmoto + '&idcliente=' + idcliente
+    });
+    request.done(function (resp) {
+        console.log(resp);
+        $("#edithistoria").html(resp);
+    });
+};
 
 var $btnBuscar = $('.btnBuscar');
 $btnBuscar.click(function (es) {

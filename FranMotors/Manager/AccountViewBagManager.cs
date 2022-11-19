@@ -9,7 +9,7 @@ namespace FranMotors.Manager
     public interface IAccountViewBagManager
     {
         void ConfiguraViewBagForVirwAccount(dynamic viewBag);
-        void ConfiguraViewBagForViewListHistory(dynamic viewBag, int idcliente);
+        void ConfiguraViewBagForViewListHistory(dynamic viewBag, int idmoto, int idcliente);
         void ConfiguraViewBagError(dynamic viewBag);
         void ConfiguraViewBagListMoto(dynamic viewBag, int id);
     }
@@ -27,9 +27,9 @@ namespace FranMotors.Manager
             viewBag.Error = "Placa no encontrada";
         }
 
-        public void ConfiguraViewBagForViewListHistory(dynamic viewBag, int idcliente)
+        public void ConfiguraViewBagForViewListHistory(dynamic viewBag, int idmoto, int idcliente)
         {
-            viewBag.moto = context.Motocicletas.FirstOrDefault(o => o.IdCliente == idcliente);
+            viewBag.moto = context.Motocicletas.FirstOrDefault(o => o.Id == idmoto && o.IdCliente == idcliente);
         }
 
         public void ConfiguraViewBagForVirwAccount(dynamic viewBag)
