@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace FranMotors.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private readonly FranMotorsContext context;
@@ -28,8 +29,7 @@ namespace FranMotors.Controllers
         {
             accountViewBagManager.ConfiguraViewBagForVirwAccount(ViewBag);
             return View(new Account());
-        }
-        [Authorize]
+        }        
         [HttpGet]
         public IActionResult Mecanico()
         {
