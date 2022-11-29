@@ -23,7 +23,7 @@ namespace FranMotors.Models
         public string Dni { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
-        [RegularExpression("/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;", ErrorMessage = "E-mail no valido")]
+        [RegularExpression("^[a-zA-Z0-9-_.]+@([a-zA-Z0-9]+.)[a-zA-Z]{2,6}$", ErrorMessage = "E-mail no valido")]
         public string Correo { get; set; }
 
         [Required(ErrorMessage = "Este campo es obligatorio")]
